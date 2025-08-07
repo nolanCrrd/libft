@@ -14,12 +14,14 @@ int	main(void)
 	assert(ft_isalpha('[') == 0);
 	assert(ft_isalpha('@') == 0);
 	assert(ft_isalpha('~') == 0);
+
 	// tests ft_isdigits
 	assert(ft_isdigit('0') == 1);
 	assert(ft_isdigit('9') == 1);
 	assert(ft_isdigit('5') == 1);
 	assert(ft_isdigit('0' - 1) == 0);
 	assert(ft_isdigit('9' + 1) == 0);
+
 	// tests ft_isalnum
 	assert(ft_isalnum('0') == 1);
 	assert(ft_isalnum('9') == 1);
@@ -31,12 +33,14 @@ int	main(void)
 	assert(ft_isalnum('[') == 0);
 	assert(ft_isalnum('@') == 0);
 	assert(ft_isalnum('~') == 0);
+
 	// tests ft_isascii
 	assert(ft_isascii(0) == 1);
 	assert(ft_isascii(127) == 1);
 	assert(ft_isascii(56) == 1);
 	assert(ft_isascii(-1) == 0);
 	assert(ft_isascii(128) == 0);
+
 	// tests ft_isprint
 	assert(ft_isprint(32) == 1);
 	assert(ft_isprint(126) == 1);
@@ -44,14 +48,66 @@ int	main(void)
 	assert(ft_isprint(31) == 0);
 	assert(ft_isprint(-1) == 0);
 	assert(ft_isprint(130) == 0);
+
 	// test ft_strlen
 	assert(ft_strlen("") == 0);
 	assert(ft_strlen("1") == 1);
 	assert(ft_strlen("123456789") == 9);
 	assert(ft_strlen("bonjour test") == 12);
+
 	// tests ft_memset
 	char *p = malloc(10);
-	ft_memset(p, 'x', 100);
-	printf("%s", (char *)p);
+	ft_memset(p, 'x', 10);
+	assert(ft_strncmp(p, "xxxxxxxxxx", 10) == 0);
+
 	// test bzero
+	ft_bzero(p, 10);
+	assert(ft_strncmp(p, "", 10) == 0);
+	assert(p[10] == 0);
+	assert(p[9] == 0);
+	assert(p[5] == 0);
+
+	// tests ft_memcpy
+	char *p2 = "test";
+	p[4] = 'z';
+	ft_memcpy(p, p2, 5);
+	assert(ft_strncmp(p, p2, 10) == 0);
+	assert(p[4] == 0);
+
+	// tests ft_memmove
+	free(p);
+	p = malloc(10);
+	p = ft_memcpy(p, "123456789", 9);
+	ft_memmove(p + 2, p, 5); // On copie "abcde" à partir de p vers p+2
+	assert(ft_strncmp(p, "121234589", 10) == 0);
+
+	// tests ft_strlcpy
+	p2 = malloc(5);
+	ft_strlcpy(p2, p, 5);
+	assert(ft_strncmp(p2, "1212", 5) == 0);
+
+	// tests ft_strlcat
+	free(p2);
+	p2 = malloc(20);
+	ft_strlcpy(p2, "123456789", 20);
+	assert(ft_strlcat(p2, p, 15) == 18);
+	assert(ft_strncmp(p2, "12345678912123", 20) == 0);
+	
+	// tests toupper
+	ft_strlcpy(p2, "hello, world !", 20);
+	for (int i = 0; p2[i]; i++)
+		p2[i] = ft_toupper(p2[i]);
+	assert(ft_strncmp(p2, "HELLO, WORLD !", 20) == 0);
+
+	// tests tolower
+	ft_strlcpy(p2, "HELLO, WORLD !", 20);
+	for (int i = 0; p2[i]; i++)
+		p2[i] = ft_tolower(p2[i]);
+	assert(ft_strncmp(p2, "hello, world !", 20) == 0);
+
+	// tests strchr
+	assert(ft_strncmp(ft_strchr(p2, 'l'), p2 + 2, 20) == 0);
+
+	// tests strrchr
+	
 }
