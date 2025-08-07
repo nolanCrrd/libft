@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/07 18:32:58 by ncorrear          #+#    #+#             */
+/*   Updated: 2025/08/07 19:06:06by ncorrear         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <assert.h>
 #include <stdio.h>
@@ -68,7 +80,7 @@ int	main(void)
 	assert(p[5] == 0);
 
 	// tests ft_memcpy
-	char *p2 = "test";
+	char	*p2 = "test";
 	p[4] = 'z';
 	ft_memcpy(p, p2, 5);
 	assert(ft_strncmp(p, p2, 10) == 0);
@@ -92,22 +104,48 @@ int	main(void)
 	ft_strlcpy(p2, "123456789", 20);
 	assert(ft_strlcat(p2, p, 15) == 18);
 	assert(ft_strncmp(p2, "12345678912123", 20) == 0);
-	
-	// tests toupper
+
+	// tests ft_toupper
 	ft_strlcpy(p2, "hello, world !", 20);
 	for (int i = 0; p2[i]; i++)
 		p2[i] = ft_toupper(p2[i]);
 	assert(ft_strncmp(p2, "HELLO, WORLD !", 20) == 0);
 
-	// tests tolower
+	// tests ft_tolower
 	ft_strlcpy(p2, "HELLO, WORLD !", 20);
 	for (int i = 0; p2[i]; i++)
 		p2[i] = ft_tolower(p2[i]);
 	assert(ft_strncmp(p2, "hello, world !", 20) == 0);
 
-	// tests strchr
-	assert(ft_strncmp(ft_strchr(p2, 'l'), p2 + 2, 20) == 0);
+	// tests ft_strchr
+	assert(ft_strchr(p2, 'l') == p2 + 2);
+	assert(ft_strchr(p2, 'k') == NULL);
+	assert(ft_strchr(p2, '\0') == p2 + 14);
 
-	// tests strrchr
+	// tests ft_strrchr
+	assert(ft_strrchr(p2, 'l') == p2 + 10);
+	assert(ft_strrchr(p2, 'k') == NULL);
+	assert(ft_strrchr(p2, '\0') == p2 + 14);
+
+	// test ft_strncmp
+	assert(ft_strncmp(p2, "hello, world !", 20) == 0);
+	assert(ft_strncmp(p2, "", 20) == 'h');
+	assert(ft_strncmp(p2, "l", 20) == 'h' - 'l');
+
+	// tests memchr
+	assert(ft_memchr(p2, 'l', 20) == p2 + 2);
+	assert(ft_memchr(p2, 'h', 20) == p2);
+	assert(ft_memchr(p2, '\0', 20) == p2 + 14);
+	assert(ft_memchr(p2, 'k', 20) == NULL);
+
+	// tests memcmp
+	assert(ft_memcmp(p2, "hello, world !", 14) == 0);
+	assert(ft_memcmp(p2, "", 20) == 'h');
+	assert(ft_memcmp(p2, "l", 20) == 'h' - 'l');
 	
+	// tests strnstr
+	assert(ft_strnstr(p2, "lo,", 20) == p2 + 3);
+	assert(ft_strnstr(p2, "helllo", 20) == NULL);
+	assert(ft_strnstr(p2, "!\0", 20) == p2 + 13);
+
 }
