@@ -161,4 +161,21 @@ int	main(void)
 	assert(atoi("       \t\v\n -2147483648") == ft_atoi("       \t\v\n -2147483648"));
 	assert(atoi("       \t\v\n +2147483648") == ft_atoi("       \t\v\n +2147483648"));
 	assert(atoi("       \t\v\n +2147483647") == ft_atoi("       \t\v\n +2147483647"));
+
+	// tests ft_calloc
+	int	*p3 = calloc(10, 4); //10 int de 4 octets
+	int	*p4 = ft_calloc(10, 4);
+	assert(ft_memcmp(p3, p4, 40) == 0);
+	p3 = calloc(10, 0);
+	p4 = ft_calloc(10, 0);
+	assert(ft_memcmp(p3, p4, 0) == 0);
+	p3 = calloc(0, 0);
+	p4 = ft_calloc(0, 0);
+	assert(ft_memcmp(p3, p4, 0) == 0);
+	p3 = calloc(-1, -1);
+	p4 = ft_calloc(-1, -1);
+	assert(ft_memcmp(p3, p4, 0) == 0);
+	p3 = calloc(-1, 1);
+	p4 = ft_calloc(-1, 1);
+	assert(ft_memcmp(p3, p4, 0) == 0);
 }
