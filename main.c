@@ -132,20 +132,33 @@ int	main(void)
 	assert(ft_strncmp(p2, "", 20) == 'h');
 	assert(ft_strncmp(p2, "l", 20) == 'h' - 'l');
 
-	// tests memchr
+	// tests ft_memchr
 	assert(ft_memchr(p2, 'l', 20) == p2 + 2);
 	assert(ft_memchr(p2, 'h', 20) == p2);
 	assert(ft_memchr(p2, '\0', 20) == p2 + 14);
 	assert(ft_memchr(p2, 'k', 20) == NULL);
 
-	// tests memcmp
+	// tests ft_memcmp
 	assert(ft_memcmp(p2, "hello, world !", 14) == 0);
 	assert(ft_memcmp(p2, "", 20) == 'h');
 	assert(ft_memcmp(p2, "l", 20) == 'h' - 'l');
 	
-	// tests strnstr
+	// tests ft_strnstr
 	assert(ft_strnstr(p2, "lo,", 20) == p2 + 3);
 	assert(ft_strnstr(p2, "helllo", 20) == NULL);
 	assert(ft_strnstr(p2, "!\0", 20) == p2 + 13);
 
+	// tests ft_atoi
+	assert(atoi("0") == ft_atoi("0"));
+	assert(atoi("-0") == ft_atoi("-0"));
+	assert(atoi("+0") == ft_atoi("+0"));
+	assert(atoi("--1") == ft_atoi("--1"));
+	assert(atoi("++1") == ft_atoi("++1"));
+	assert(atoi("       \t\v\n +999") == ft_atoi("       \t\v\n +999"));
+	assert(atoi("       \t\v\n -999") == ft_atoi("       \t\v\n -999"));
+	assert(atoi("       \t\v\n ++999") == ft_atoi("       \t\v\n ++999"));
+	assert(atoi("       \t\v\n --999") == ft_atoi("       \t\v\n --999"));
+	assert(atoi("       \t\v\n -2147483648") == ft_atoi("       \t\v\n -2147483648"));
+	assert(atoi("       \t\v\n +2147483648") == ft_atoi("       \t\v\n +2147483648"));
+	assert(atoi("       \t\v\n +2147483647") == ft_atoi("       \t\v\n +2147483647"));
 }
