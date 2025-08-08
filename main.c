@@ -178,4 +178,9 @@ int	main(void)
 	p3 = calloc(-1, 1);
 	p4 = ft_calloc(-1, 1);
 	assert(ft_memcmp(p3, p4, 0) == 0);
+
+	// tests ft_strdup
+	assert(ft_strncmp(ft_strdup("test"), strdup("test"), 5) == 0);
+	assert(ft_strncmp(ft_strdup(""), strdup(""), 0) == 0);
+	assert(ft_strncmp(ft_strdup("\0"), strdup("\0"), 0) == 0);
 }
