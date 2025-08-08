@@ -180,7 +180,10 @@ int	main(void)
 	assert(ft_memcmp(p3, p4, 0) == 0);
 
 	// tests ft_strdup
+	char	*dup = malloc(10000000);
+	ft_memset(dup, 'x', 1000000);
 	assert(ft_strncmp(ft_strdup("test"), strdup("test"), 5) == 0);
 	assert(ft_strncmp(ft_strdup(""), strdup(""), 0) == 0);
 	assert(ft_strncmp(ft_strdup("\0"), strdup("\0"), 0) == 0);
+	assert(ft_strncmp(ft_strdup(dup), strdup(dup), 0) == 0);
 }
