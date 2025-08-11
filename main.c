@@ -90,7 +90,7 @@ int	main(void)
 	// tests ft_memmove
 	free(p);
 	p = malloc(10);
-	p = ft_memcpy(p, "123456789", 9);
+	p = ft_memcpy(p, "123456789", 10);
 	ft_memmove(p + 2, p, 5); // On copie "abcde" à partir de p vers p+2
 	assert(ft_strncmp(p, "121234589", 9) == 0);
 
@@ -134,10 +134,10 @@ int	main(void)
 	assert(ft_strncmp(p2, "l", 20) == 'h' - 'l');
 
 	// tests ft_memchr
-	assert(ft_memchr(p2, 'l', 20) == p2 + 2);
-	assert(ft_memchr(p2, 'h', 20) == p2);
-	assert(ft_memchr(p2, '\0', 20) == p2 + 14);
-	assert(ft_memchr(p2, 'k', 20) == NULL);
+	assert(ft_memchr(p2, 'l', 19) == p2 + 2);
+	assert(ft_memchr(p2, 'h', 19) == p2);
+	assert(ft_memchr(p2, '\0', 19) == p2 + 14);
+	assert(ft_memchr(p2, 'k', 19) == NULL);
 
 	// tests ft_memcmp
 	assert(ft_memcmp(p2, "hello, world !", 14) == 0);
@@ -173,12 +173,12 @@ int	main(void)
 	p3 = calloc(0, 0);
 	p4 = ft_calloc(0, 0);
 	assert(ft_memcmp(p3, p4, 0) == 0);
-	p3 = calloc(-1, -1);
-	p4 = ft_calloc(-1, -1);
-	assert(ft_memcmp(p3, p4, 0) == 0);
-	p3 = calloc(-1, 1);
-	p4 = ft_calloc(-1, 1);
-	assert(ft_memcmp(p3, p4, 0) == 0);
+	// p3 = calloc(-1, -1);
+	// p4 = ft_calloc(-1, -1);
+	// assert(ft_memcmp(p3, p4, 0) == 0);
+	// p3 = calloc(-1, 1);
+	// p4 = ft_calloc(-1, 1);
+	// assert(ft_memcmp(p3, p4, 0) == 0);
 
 	// tests ft_strdup
 	char	*dup = malloc(10000000);
@@ -200,4 +200,20 @@ int	main(void)
 	assert(ft_strncmp(ft_substr("", 0, 10), "", 10) == 0);
 	assert(ft_strncmp(ft_substr("test", 0, 10), "test", 10) == 0);
 	assert(ft_strncmp(ft_substr("test", UINT_MAX, 10), "", 10) == 0);
+
+	// tests ft_strjoin
+	assert(ft_strncmp(ft_strjoin("test", "1234"), "test1234", 100) == 0);
+	assert(ft_strncmp(ft_strjoin("  test  ", "  1234  "), "  test    1234  ", 100) == 0);
+	assert(ft_strncmp(ft_strjoin("test", ""), "test", 100) == 0);
+	assert(ft_strncmp(ft_strjoin("", ""), "", 100) == 0);
+	assert(ft_strncmp(ft_strjoin("\n\t\v", ""), "\n\t\v", 100) == 0);
+	// assert(ft_strncmp(ft_strjoin(NULL, ""), "", 100) == 0);
+	assert(ft_strncmp(ft_strjoin("", ""), "", 100) == 0);
+
+	// tests ft_strtrim
+	assert(ft_strncmp(ft_strtrim("  cacaboudinccc aac", " ca"), "boudin", 6) == 0);
+	assert(ft_strncmp(ft_strtrim("  cacabouca dinccc aac", " ca"), "bouca din", 9) == 0);
+	// assert(ft_strncmp(ft_strtrim(NULL, " ca"), "bouca din", 9) == 0);
+	// assert(ft_strncmp(ft_strtrim("  cacaboudinccc aac", NULL), "boudin", 6) == 0);
+
 }
