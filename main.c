@@ -15,6 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
 
 int	main(void)
 {
@@ -70,12 +71,12 @@ int	main(void)
 	// tests ft_memset
 	char *p = malloc(10);
 	ft_memset(p, 'x', 10);
-	assert(ft_strncmp(p, "xxxxxxxxxx", 10) == 0);
+	assert(ft_strncmp(p, "xxxxxxxxxx", 9) == 0);
 
 	// test bzero
 	ft_bzero(p, 10);
 	assert(ft_strncmp(p, "", 10) == 0);
-	assert(p[10] == 0);
+	assert(p[9] == 0);
 	assert(p[9] == 0);
 	assert(p[5] == 0);
 
@@ -91,7 +92,7 @@ int	main(void)
 	p = malloc(10);
 	p = ft_memcpy(p, "123456789", 9);
 	ft_memmove(p + 2, p, 5); // On copie "abcde" à partir de p vers p+2
-	assert(ft_strncmp(p, "121234589", 10) == 0);
+	assert(ft_strncmp(p, "121234589", 9) == 0);
 
 	// tests ft_strlcpy
 	p2 = malloc(5);
@@ -186,4 +187,17 @@ int	main(void)
 	assert(ft_strncmp(ft_strdup(""), strdup(""), 0) == 0);
 	assert(ft_strncmp(ft_strdup("\0"), strdup("\0"), 0) == 0);
 	assert(ft_strncmp(ft_strdup(dup), strdup(dup), 0) == 0);
+
+	// tests ft_substr
+	assert(ft_strncmp(ft_substr("test", 2, 1), "s", 10) == 0);
+	assert(ft_strncmp(ft_substr("test", 2, 2), "st", 10) == 0);
+	assert(ft_strncmp(ft_substr("test", 2, 3), "st", 10) == 0);
+	assert(ft_strncmp(ft_substr("test", 3, 3), "t", 10) == 0);
+	assert(ft_strncmp(ft_substr("test", 2, 0), "", 10) == 0);
+	assert(ft_substr("test", -1, -1)[0] == '\0');
+	assert(ft_strncmp(ft_substr("test", 0, -1), "test", 10) == 0);
+	assert(ft_substr(NULL, 10, 10) == NULL);
+	assert(ft_strncmp(ft_substr("", 0, 10), "", 10) == 0);
+	assert(ft_strncmp(ft_substr("test", 0, 10), "test", 10) == 0);
+	assert(ft_strncmp(ft_substr("test", UINT_MAX, 10), "", 10) == 0);
 }
