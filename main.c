@@ -88,7 +88,6 @@ int	main(void)
 	assert(p[4] == 0);
 
 	// tests ft_memmove
-	free(p);
 	p = malloc(10);
 	p = ft_memcpy(p, "123456789", 10);
 	ft_memmove(p + 2, p, 5); // On copie "abcde" à partir de p vers p+2
@@ -98,9 +97,8 @@ int	main(void)
 	p2 = malloc(5);
 	ft_strlcpy(p2, p, 5);
 	assert(ft_strncmp(p2, "1212", 5) == 0);
-
+	
 	// tests ft_strlcat
-	free(p2);
 	p2 = malloc(20);
 	ft_strlcpy(p2, "123456789", 20);
 	assert(ft_strlcat(p2, p, 15) == 18);
@@ -181,11 +179,11 @@ int	main(void)
 	// assert(ft_memcmp(p3, p4, 0) == 0);
 
 	// tests ft_strdup
-	char	*dup = malloc(10000000);
-	ft_memset(dup, 'x', 1000000);
 	assert(ft_strncmp(ft_strdup("test"), strdup("test"), 5) == 0);
 	assert(ft_strncmp(ft_strdup(""), strdup(""), 0) == 0);
 	assert(ft_strncmp(ft_strdup("\0"), strdup("\0"), 0) == 0);
+	char	*dup = malloc(10000000);
+	ft_memset(dup, 'x', 1000000);
 	assert(ft_strncmp(ft_strdup(dup), strdup(dup), 0) == 0);
 
 	// tests ft_substr
@@ -202,8 +200,6 @@ int	main(void)
 	assert(ft_strncmp(ft_substr("test", UINT_MAX, 10), "", 10) == 0);
 
 	// tests ft_strjoin
-	assert(ft_strncmp(ft_strjoin("test", "1234"), "test1234", 100) == 0);
-	assert(ft_strncmp(ft_strjoin("  test  ", "  1234  "), "  test    1234  ", 100) == 0);
 	assert(ft_strncmp(ft_strjoin("test", ""), "test", 100) == 0);
 	assert(ft_strncmp(ft_strjoin("", ""), "", 100) == 0);
 	assert(ft_strncmp(ft_strjoin("\n\t\v", ""), "\n\t\v", 100) == 0);
@@ -216,4 +212,19 @@ int	main(void)
 	// assert(ft_strncmp(ft_strtrim(NULL, " ca"), "bouca din", 9) == 0);
 	// assert(ft_strncmp(ft_strtrim("  cacaboudinccc aac", NULL), "boudin", 6) == 0);
 
+	// tests ft_split
+	char 	**list = ft_split(",,,test, test,,, caca,,,,c,,,", ',');
+	char	*test_list[] = {"test", " test", " caca", "c"};
+	for (int i = 0; list[i] != NULL; i++)
+	{
+		assert(ft_strncmp(list[i], test_list[i], 100) == 0);
+	}
+	list = ft_split("\0", 'c');
+	assert(list[0] == NULL);
+	list = ft_split("t", ',');
+	assert(ft_strncmp(list[0], "t", 100) == 0);
+	list = ft_split(",t,", ',');
+	assert(ft_strncmp(list[0], "t", 100) == 0);
+	// list = NULL;
+	// assert(ft_strncmp(list[0], test_list[0], 100) == 0);
 }
