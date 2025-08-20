@@ -227,4 +227,12 @@ int	main(void)
 	assert(ft_strncmp(list[0], "t", 100) == 0);
 	// list = NULL;
 	// assert(ft_strncmp(list[0], test_list[0], 100) == 0);
+
+	// tests itoa
+	assert(ft_strncmp(ft_itoa(-0), "0", 12) == 0);
+	assert(ft_strncmp(ft_itoa(-10), "-10", 12) == 0);
+	assert(ft_strncmp(ft_itoa(12341234), "12341234", 12) == 0);
+	assert(ft_strncmp(ft_itoa(-2147483648), "-2147483648", 12) == 0);
+	assert(ft_strncmp(ft_itoa(2147483647), "2147483647", 12) == 0);
+	assert(ft_strncmp(ft_itoa(-12341234), "-12341234", 12) == 0);
 }
