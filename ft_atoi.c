@@ -6,7 +6,7 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:17 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/08 21:23:18 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/08/22 09:33:36 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *str)
 {
-	int	sum;
-	int	i;
+	int		sum;
+	size_t	i;
 
 	sum = 0;
 	while (*str == ' ' || (*str >= 9 && *str <= 13))

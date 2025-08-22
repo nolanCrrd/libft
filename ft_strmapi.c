@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/12 02:26:34 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/22 09:32:37 by ncorrear         ###   ########.fr       */
+/*   Created: 2025/08/22 09:10:45 by ncorrear          #+#    #+#             */
+/*   Updated: 2025/08/22 09:20:41 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	len;
-	char			*trimmed_str;
-	size_t	i;
+	char			*mapped_str;
+	size_t			i;
 
-	while (*s1 && ft_strchr(set, *s1) != NULL)
-		s1++;
-	len = ft_strlen(s1);
-	while (len > 0 && ft_strchr(set, s1[len - 1]))
-		len--;
-	trimmed_str = malloc(len + 1);
-	if (trimmed_str == NULL)
+	mapped_str = malloc(ft_strlen(s) + 1);
+	if (mapped_str == NULL)
 		return (NULL);
 	i = 0;
-	while (i < len)
+	while (s[i])
 	{
-		trimmed_str[i] = s1[i];
+		mapped_str[i] = f(i,s[i]);
 		i++;
 	}
-	trimmed_str[i] = '\0';
-	return (trimmed_str);
+	mapped_str[i] = '\0';
+	return (mapped_str);
 }

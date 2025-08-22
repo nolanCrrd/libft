@@ -64,6 +64,7 @@ int	main(void)
 
 	// test ft_strlen
 	assert(ft_strlen("") == 0);
+	assert(ft_strlen("\0") == 0);
 	assert(ft_strlen("1") == 1);
 	assert(ft_strlen("123456789") == 9);
 	assert(ft_strlen("bonjour test") == 12);
@@ -209,6 +210,8 @@ int	main(void)
 	// tests ft_strtrim
 	assert(ft_strncmp(ft_strtrim("  cacaboudinccc aac", " ca"), "boudin", 6) == 0);
 	assert(ft_strncmp(ft_strtrim("  cacabouca dinccc aac", " ca"), "bouca din", 9) == 0);
+	assert(ft_strncmp(ft_strtrim("test", ""), "test", 9) == 0);
+	assert(ft_strncmp(ft_strtrim("\0", " ca"), "", 9) == 0);
 	// assert(ft_strncmp(ft_strtrim(NULL, " ca"), "bouca din", 9) == 0);
 	// assert(ft_strncmp(ft_strtrim("  cacaboudinccc aac", NULL), "boudin", 6) == 0);
 
