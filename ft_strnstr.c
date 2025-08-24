@@ -6,12 +6,20 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:24:04 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/08 21:24:05 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/08/24 19:40:22 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief locate the first occurence of the string 'needle' in the string 'haystack'
+ * 
+ * @param haystack string to look at
+ * @param needle string to find
+ * @param len number of char to check
+ * @return char* pointer to the first occurence (NULL if not find)
+ */
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;

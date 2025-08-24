@@ -6,12 +6,18 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 18:35:12 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/24 18:45:53 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/08/24 19:23:20 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Write a number into a given file descriptor
+ * 
+ * @param nb number to write
+ * @param fd file descriptor
+ */
 void	ft_putnbr_fd(int nb, int fd)
 {
 	if (nb == -2147483648)

@@ -6,12 +6,19 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:24:06 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/08 21:24:07 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/08/24 19:40:16 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Locate the last occurence of char 'c' int string 's'
+ * 
+ * @param s string to look at
+ * @param c char to find
+ * @return char* pointer to the last occurence (NULL if not find)
+ */
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*last;

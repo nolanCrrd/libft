@@ -6,12 +6,20 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:37 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/08 21:23:38 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/08/24 19:18:01 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Compare 2 memory spaces
+ * 
+ * @param s1 memory space 1
+ * @param s2 memory space 2
+ * @param n number of bytes to compare
+ * @return int the difference between 2 different elements (0 if same)
+ */
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*s1_ptr;

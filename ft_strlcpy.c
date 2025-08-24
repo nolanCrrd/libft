@@ -6,12 +6,20 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:57 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/08 21:23:58 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/08/24 19:32:13 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Copy the 'src'int 'dst' int 'dstsize' linmit
+ * 
+ * @param dst destination where to copy
+ * @param src source
+ * @param dstsize allocated size of dst
+ * @return size_t size that dst should do after the copy
+ */
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;

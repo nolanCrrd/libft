@@ -6,12 +6,20 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:42 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/08 21:23:43 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/08/24 19:20:08 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Copy the source into the destination without overlap
+ * 
+ * @param dst destination where to copy
+ * @param src source to copy
+ * @param len size in bytes of the source
+ * @return void* pointer of the destination
+ */
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char	*dst_ptr;

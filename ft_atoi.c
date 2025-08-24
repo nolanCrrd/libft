@@ -6,12 +6,18 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:17 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/24 18:43:32 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/08/24 19:07:32 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief transform a string number into an int
+ * 
+ * @param str the number to convert
+ * @return int the converted number
+ */
 int	ft_atoi(const char *str)
 {
 	int		sum;

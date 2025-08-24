@@ -6,12 +6,18 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:20 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/24 18:44:26 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/08/24 19:10:38 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief fill the memory space 's' of 'n' 0
+ * 
+ * @param s memory space
+ * @param n number of zero
+ */
 void	ft_bzero(void *s, size_t n)
 {
 	size_t			i;

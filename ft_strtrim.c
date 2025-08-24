@@ -6,13 +6,20 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 02:26:34 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/24 18:54:58 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/08/24 19:42:46 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
+/**
+ * @brief delete given 'set' of char at start and end of a string
+ * 
+ * @param s1 string to trim
+ * @param set set of char to delete
+ * @return char* pointer to trimmed string (NULL if malloc fail)
+ */
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	len;

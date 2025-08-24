@@ -6,12 +6,20 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:52 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/08 21:23:53 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/08/24 19:32:30 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief put the 'src' at the end of 'dst' in the 'dstsize' limit
+ * 
+ * @param dst string to recieve a suffix
+ * @param src suffix
+ * @param dstsize allocated size of dst
+ * @return size_t size that dst should have after the concatenation
+ */
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;

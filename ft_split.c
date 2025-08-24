@@ -6,7 +6,7 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 02:26:24 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/24 18:53:01 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/08/24 19:41:00 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,13 @@ static char **clear(char **strs, size_t j)
 }
 
 // TODO : fix le nombre de ligne
+/**
+ * @brief Seperate the given string by the separator 'c' and put each splitted string into an array
+ * 
+ * @param s string to split
+ * @param c separator
+ * @return char** array (NULL if malloc fail)
+ */
 char	**ft_split(char const *s, char c)
 {
 	char	**strs;

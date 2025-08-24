@@ -6,13 +6,20 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 02:26:20 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/24 18:55:43 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/08/24 19:28:58 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
+/**
+ * @brief Stick 2 different strings
+ * 
+ * @param s1 string 1
+ * @param s2 string 2
+ * @return char* new allocated string
+ */
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	total_len;

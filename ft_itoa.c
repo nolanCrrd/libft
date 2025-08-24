@@ -6,7 +6,7 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 02:26:14 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/24 18:44:48 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/08/24 19:41:17 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,12 @@ static void	set_reverse_number(char tmp_buffer[11], int n, int *i)
 	}
 }
 
+/**
+ * @brief convert a given int into a string
+ * 
+ * @param n the int to convert
+ * @return char* the string of the number (NULL if malloc fail)
+ */
 char	*ft_itoa(int n)
 {
 	char	*buffer;

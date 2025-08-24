@@ -6,12 +6,18 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:59 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/24 18:54:33 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/08/24 19:33:33 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Return the size of the given string '\0' excluded
+ * 
+ * @param s string to mesure
+ * @return size_t len of the string
+ */
 size_t	ft_strlen(const char *s)
 {
 	size_t	size;

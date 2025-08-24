@@ -6,7 +6,7 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 18:55:11 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/24 18:55:29 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/08/24 19:45:30 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 #include <stddef.h>
 #include <stdlib.h>
 
+/**
+ * @brief Duplicate 'len' char from the given string but only from the index 'start'
+ * 
+ * @param s string to duplicate
+ * @param start start index of duplication
+ * @param len number of char after start
+ * @return char* allocated string (NULL if malloc fail)
+ */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char		*substr;

@@ -6,7 +6,7 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:22 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/24 18:44:37 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/08/24 19:41:31 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 #include <stdlib.h>
 #include <errno.h>
 
+/**
+ * @brief malloc a memory space of count * size bytes and fill them with zero
+ * 
+ * @param count number of elements
+ * @param size size of each element
+ * @return void* pointer to the allocated memory space (NULL if malloc fail)
+ */
 void	*ft_calloc(size_t count, size_t size)
 {
 	size_t			i;

@@ -6,12 +6,20 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:24:01 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/08 21:24:02 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/08/24 19:36:33 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Compare 'n' char of 2 differents strings
+ * 
+ * @param s1 string 1
+ * @param s2 string 2
+ * @param n number of char to compare
+ * @return int the space between 2 different char in string (0 if same string)
+ */
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
