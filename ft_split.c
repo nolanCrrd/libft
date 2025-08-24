@@ -6,11 +6,12 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 02:26:24 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/12 02:26:25 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/08/24 18:53:01 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 #include <stdlib.h>
 
 static size_t count_word(char const *s, char c)
@@ -41,6 +42,7 @@ static char **clear(char **strs, size_t j)
 	}
 	return (strs);
 }
+
 // TODO : fix le nombre de ligne
 char	**ft_split(char const *s, char c)
 {

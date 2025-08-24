@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/10 20:07:37 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/10 20:52:14ncorrear         ###   ########.fr       */
+/*   Created: 2025/08/24 18:55:11 by ncorrear          #+#    #+#             */
+/*   Updated: 2025/08/24 18:55:29 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	while (s[reel_len] && reel_len < start)
 		reel_len++;
 	is_possible = (reel_len == start);
-	while (is_possible && s[reel_len] != '\0'  && reel_len - start < len)
+	while (is_possible && s[reel_len] != '\0' && reel_len - start < len)
 		reel_len++;
 	substr = malloc(sizeof(char) * (is_possible * reel_len + 1));
 	if (substr == NULL)

@@ -6,7 +6,7 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:59 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/08 21:24:00 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/08/24 18:54:33 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	ft_strlen(const char *s)
 {
 	size_t	size;
-	
+
 	size = 0;
 	while (s[size])
 		size++;

@@ -6,7 +6,7 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 02:26:20 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/22 09:25:20 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/08/24 18:55:43 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t			total_len;
-	char			*str;
+	size_t	total_len;
+	char	*str;
 	size_t	i;
 
 	total_len = ft_strlen(s1) + ft_strlen(s2);

@@ -6,7 +6,7 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 09:10:45 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/22 09:20:41 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/08/24 18:54:46 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	while (s[i])
 	{
-		mapped_str[i] = f(i,s[i]);
+		mapped_str[i] = f(i, s[i]);
 		i++;
 	}
 	mapped_str[i] = '\0';
