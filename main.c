@@ -12,6 +12,7 @@
 
 #include "libft.h"
 #include <assert.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -20,63 +21,66 @@
 int	main(void)
 {
 	// tests ft_isalpha
-	assert(ft_isalpha('a') == 1);
-	assert(ft_isalpha('z') == 1);
-	assert(ft_isalpha('A') == 1);
-	assert(ft_isalpha('Z') == 1);
-	assert(ft_isalpha('[') == 0);
-	assert(ft_isalpha('@') == 0);
-	assert(ft_isalpha('~') == 0);
+	assert(ft_isalpha('a') == isalpha('a'));
+	assert(ft_isalpha('z') == isalpha('z'));
+	assert(ft_isalpha('A') == isalpha('A'));
+	assert(ft_isalpha('Z') == isalpha('Z'));
+	assert(ft_isalpha('[') == isalpha('['));
+	assert(ft_isalpha('@') == isalpha('@'));
+	assert(ft_isalpha('~') == isalpha('~'));
 
 	// tests ft_isdigits
-	assert(ft_isdigit('0') == 1);
-	assert(ft_isdigit('9') == 1);
-	assert(ft_isdigit('5') == 1);
-	assert(ft_isdigit('0' - 1) == 0);
-	assert(ft_isdigit('9' + 1) == 0);
+	assert(ft_isdigit('0') == isdigit('0'));
+	assert(ft_isdigit('9') == isdigit('9'));
+	assert(ft_isdigit('5') == isdigit('5'));
+	assert(ft_isdigit('0' - 1) == isdigit('0' - 1));
+	assert(ft_isdigit('9' + 1) == isdigit('9' + 1));
 
 	// tests ft_isalnum
-	assert(ft_isalnum('0') == 1);
-	assert(ft_isalnum('9') == 1);
-	assert(ft_isalnum('5') == 1);
-	assert(ft_isalnum('a') == 1);
-	assert(ft_isalnum('z') == 1);
-	assert(ft_isalnum('A') == 1);
-	assert(ft_isalnum('Z') == 1);
-	assert(ft_isalnum('[') == 0);
-	assert(ft_isalnum('@') == 0);
-	assert(ft_isalnum('~') == 0);
+	assert(ft_isalnum('0') == isalnum('0'));
+	assert(ft_isalnum('9') == isalnum('9'));
+	assert(ft_isalnum('5') == isalnum('5'));
+	assert(ft_isalnum('a') == isalnum('a'));
+	assert(ft_isalnum('z') == isalnum('z'));
+	assert(ft_isalnum('A') == isalnum('A'));
+	assert(ft_isalnum('Z') == isalnum('Z'));
+	assert(ft_isalnum('[') == isalnum('['));
+	assert(ft_isalnum('@') == isalnum('@'));
+	assert(ft_isalnum('~') == isalnum('~'));
 
 	// tests ft_isascii
-	assert(ft_isascii(0) == 1);
-	assert(ft_isascii(127) == 1);
-	assert(ft_isascii(56) == 1);
-	assert(ft_isascii(-1) == 0);
-	assert(ft_isascii(128) == 0);
+	assert(ft_isascii(0) == isascii(0));
+	assert(ft_isascii(127) == isascii(127));
+	assert(ft_isascii(56) == isascii(56) );
+	assert(ft_isascii(-1) == isascii(-1) );
+	assert(ft_isascii(128) == isascii(128));
 
 	// tests ft_isprint
-	assert(ft_isprint(32) == 1);
-	assert(ft_isprint(126) == 1);
-	assert(ft_isprint(127) == 0);
-	assert(ft_isprint(31) == 0);
-	assert(ft_isprint(-1) == 0);
-	assert(ft_isprint(130) == 0);
+	assert(ft_isprint(32) == isprint(32));
+	assert(ft_isprint(126) == isprint(126));
+	assert(ft_isprint(127) == isprint(127));
+	assert(ft_isprint(31) == isprint(31));
+	assert(ft_isprint(-1) == isprint(-1));
+	assert(ft_isprint(130) == isprint(130));
 
 	// test ft_strlen
-	assert(ft_strlen("") == 0);
-	assert(ft_strlen("\0") == 0);
-	assert(ft_strlen("1") == 1);
-	assert(ft_strlen("123456789") == 9);
-	assert(ft_strlen("bonjour test") == 12);
+	assert(ft_strlen("") == strlen(""));
+	assert(ft_strlen("\0") == strlen("\0"));
+	assert(ft_strlen("1") == strlen("1"));
+	assert(ft_strlen("123456789") == strlen("123456789"));
+	assert(ft_strlen("bonjour test") == strlen("bonjour test"));
 
 	// tests ft_memset
 	char *p = malloc(10);
+	char *ori_p = malloc(10);
 	ft_memset(p, 'x', 10);
-	assert(ft_strncmp(p, "xxxxxxxxxx", 9) == 0);
+	memset(ori_p, 'x', 10);
+	assert(ft_strncmp(p, ori_p, 9) == 0);
 
 	// test bzero
 	ft_bzero(p, 10);
-	assert(ft_strncmp(p, "", 10) == 0);
+	bzero(ori_p, 10);
+	assert(ft_strncmp(p, ori_p, 10) == 0);
 	assert(p[9] == 0);
 	assert(p[9] == 0);
 	assert(p[5] == 0);
@@ -85,25 +89,31 @@ int	main(void)
 	char	*p2 = "test";
 	p[4] = 'z';
 	ft_memcpy(p, p2, 5);
-	assert(ft_strncmp(p, p2, 10) == 0);
+	memcpy(ori_p, p2, 5);
+	assert(ft_strncmp(p, ori_p, 10) == 0);
 	assert(p[4] == 0);
 
 	// tests ft_memmove
 	p = malloc(10);
 	p = ft_memcpy(p, "123456789", 10);
+	ori_p = ft_memcpy(ori_p, "123456789", 10);
 	ft_memmove(p + 2, p, 5); // On copie "abcde" à partir de p vers p+2
-	assert(ft_strncmp(p, "121234589", 9) == 0);
+	memmove(ori_p + 2, ori_p, 5); // On copie "abcde" à partir de p vers p+2
+	assert(ft_strncmp(p, ori_p, 9) == 0);
 
 	// tests ft_strlcpy
 	p2 = malloc(5);
 	ft_strlcpy(p2, p, 5);
-	assert(ft_strncmp(p2, "1212", 5) == 0);
+	strlcpy(ori_p, p, 5);
+	assert(ft_strncmp(p2, ori_p, 10) == 0);
 	
 	// tests ft_strlcat
 	p2 = malloc(20);
+	ori_p = malloc(20);
 	ft_strlcpy(p2, "123456789", 20);
-	assert(ft_strlcat(p2, p, 15) == 18);
-	assert(ft_strncmp(p2, "12345678912123", 20) == 0);
+	ft_strlcpy(ori_p, "123456789", 20);
+	assert(ft_strlcat(p2, p, 15) == strlcat(ori_p, p, 15));
+	assert(ft_strncmp(p2, ori_p, 20) == 0);
 
 	// tests ft_toupper
 	ft_strlcpy(p2, "hello, world !", 20);
