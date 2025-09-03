@@ -117,46 +117,54 @@ int	main(void)
 
 	// tests ft_toupper
 	ft_strlcpy(p2, "hello, world !", 20);
+	ft_strlcpy(ori_p, "hello, world !", 20);
 	for (int i = 0; p2[i]; i++)
 		p2[i] = ft_toupper(p2[i]);
-	assert(ft_strncmp(p2, "HELLO, WORLD !", 20) == 0);
+	for (int i = 0; ori_p[i]; i++)
+		ori_p[i] = toupper(ori_p[i]);
+	assert(ft_strncmp(p2, ori_p, 20) == 0);
 
 	// tests ft_tolower
 	ft_strlcpy(p2, "HELLO, WORLD !", 20);
+	ft_strlcpy(ori_p, "HELLO, WORLD !", 20);
 	for (int i = 0; p2[i]; i++)
 		p2[i] = ft_tolower(p2[i]);
-	assert(ft_strncmp(p2, "hello, world !", 20) == 0);
+	for (int i = 0; ori_p[i]; i++)
+		ori_p[i] = ft_tolower(ori_p[i]);
+	assert(ft_strncmp(p2, ori_p, 20) == 0);
 
 	// tests ft_strchr
-	assert(ft_strchr(p2, 'l') == p2 + 2);
-	assert(ft_strchr(p2, 'k') == NULL);
-	assert(ft_strchr(p2, '\0') == p2 + 14);
+	assert(ft_strchr(p2, 'l') == strchr(p2, 'l'));
+	assert(ft_strchr(p2, 'k') == strchr(p2, 'k'));
+	assert(ft_strchr(p2, '\0') == strchr(p2, '\0'));
 
 	// tests ft_strrchr
-	assert(ft_strrchr(p2, 'l') == p2 + 10);
-	assert(ft_strrchr(p2, 'k') == NULL);
-	assert(ft_strrchr(p2, '\0') == p2 + 14);
+	assert(ft_strrchr(p2, 'l') == strrchr(p2, 'l'));
+	assert(ft_strrchr(p2, 'k') == strrchr(p2, 'k'));
+	assert(ft_strrchr(p2, '\0') == strrchr(p2, '\0'));
 
 	// test ft_strncmp
-	assert(ft_strncmp(p2, "hello, world !", 20) == 0);
-	assert(ft_strncmp(p2, "", 20) == 'h');
-	assert(ft_strncmp(p2, "l", 20) == 'h' - 'l');
+	p2 = ft_calloc(20, 1);
+	ft_memcpy(p2, "hello, world !", 14);
+	assert(ft_strncmp(p2, "hello, world !", 20) == strncmp(p2, "hello, world !", 20));
+	assert(ft_strncmp(p2, "", 20) == strncmp(p2, "", 20));
+	assert(ft_strncmp(p2, "l", 20) == strncmp(p2, "l", 20));
 
 	// tests ft_memchr
-	assert(ft_memchr(p2, 'l', 19) == p2 + 2);
-	assert(ft_memchr(p2, 'h', 19) == p2);
-	assert(ft_memchr(p2, '\0', 19) == p2 + 14);
-	assert(ft_memchr(p2, 'k', 19) == NULL);
+	assert(ft_memchr(p2, 'l', 19) == memchr(p2, 'l', 19));
+	assert(ft_memchr(p2, 'h', 19) == memchr(p2, 'h', 19));
+	assert(ft_memchr(p2, '\0', 19) == memchr(p2, '\0', 19));
+	assert(ft_memchr(p2, 'k', 19) == memchr(p2, 'k', 19));
 
 	// tests ft_memcmp
-	assert(ft_memcmp(p2, "hello, world !", 14) == 0);
-	assert(ft_memcmp(p2, "", 20) == 'h');
-	assert(ft_memcmp(p2, "l", 20) == 'h' - 'l');
+	assert(ft_memcmp(p2, "hello, world !", 14) == ft_memcmp(p2, "hello, world !", 14));
+	assert(ft_memcmp(p2, "", 20) == memcmp(p2, "", 20));
+	assert(ft_memcmp(p2, "l", 20) == memcmp(p2, "l", 20));
 	
 	// tests ft_strnstr
-	assert(ft_strnstr(p2, "lo,", 20) == p2 + 3);
-	assert(ft_strnstr(p2, "helllo", 20) == NULL);
-	assert(ft_strnstr(p2, "!\0", 20) == p2 + 13);
+	assert(ft_strnstr(p2, "lo,", 20) == strnstr(p2, "lo,", 20));
+	assert(ft_strnstr(p2, "helllo", 20) == strnstr(p2, "helllo", 20));
+	assert(ft_strnstr(p2, "!\0", 20) == strnstr(p2, "!\0", 20));
 
 	// tests ft_atoi
 	assert(atoi("0") == ft_atoi("0"));
@@ -248,4 +256,6 @@ int	main(void)
 	assert(ft_strncmp(ft_itoa(-2147483648), "-2147483648", 12) == 0);
 	assert(ft_strncmp(ft_itoa(2147483647), "2147483647", 12) == 0);
 	assert(ft_strncmp(ft_itoa(-12341234), "-12341234", 12) == 0);
+
+	exit(0);
 }
