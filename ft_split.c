@@ -6,7 +6,7 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 02:26:24 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/24 19:41:00 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/09/21 18:35:44 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-static size_t count_word(char const *s, char c)
+static size_t	count_word(char const *s, char c)
 {
 	size_t	nb_word;
 
@@ -31,21 +31,52 @@ static size_t count_word(char const *s, char c)
 	return (nb_word);
 }
 
-static char **clear(char **strs, size_t j)
+static char	**clear(char **strs, size_t j)
 {
-	if (strs[j--] == NULL)
+	size_t	count;
+
+	count = 0;
+	if (strs[j] == NULL)
 	{
-		while (j >= 0)
-			free(strs[j--]);
+		j--;
+		while (count <= j)
+			free(strs[count++]);
 		free(strs);
 		return (NULL);
 	}
 	return (strs);
 }
 
-// TODO : fix le nombre de ligne
+static char	**fill_word(char const *s, char c, char **strs, size_t	*j)
+{
+	size_t	i;
+	size_t	last_word;
+
+	i = 0;
+	last_word = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+		{
+			if (i != 0 && s[i - 1] != c)
+			{
+				strs[(*j)++] = ft_substr(s, last_word, i - last_word);
+				if (clear(strs, *j - 1) == NULL)
+					return (NULL);
+			}
+			last_word = i + 1;
+		}
+		i++;
+	}
+	if (i != 0 && s[i - 1] != c)
+		strs[(*j)++] = ft_substr(s, last_word, i - last_word);
+	strs[*j] = NULL;
+	return (strs);
+}
+
 /**
- * @brief Seperate the given string by the separator 'c' and put each splitted string into an array
+ * @brief Seperate the given string by the separator 'c' and put
+ * each splitted string into an array
  * 
  * @param s string to split
  * @param c separator
@@ -54,34 +85,14 @@ static char **clear(char **strs, size_t j)
 char	**ft_split(char const *s, char c)
 {
 	char	**strs;
-	size_t	i;
-	size_t	last_word;
 	size_t	j;
 
 	strs = malloc(sizeof(char *) * (count_word(s, c) + 1));
+	j = 0;
 	if (strs == NULL)
 		return (NULL);
-	i = 0;
-	last_word = 0;
-	j = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-		{
-			if (i != 0 && s[i - 1] != c)
-			{
-				strs[j++] = ft_substr(s, last_word, i - last_word);
-				if (clear(strs, j - 1) == NULL)
-					return (NULL);
-			}
-			last_word = i + 1;
-		}
-		i++;
-	}
-	if (i != 0 && s[i - 1] != c)
-		strs[j++] = ft_substr(s, last_word, i - last_word);
+	strs = fill_word(s, c, strs, &j);
 	if (j != 0 && clear(strs, j - 1) == NULL)
 		return (NULL);
-	strs[j] = NULL;
 	return (strs);
 }

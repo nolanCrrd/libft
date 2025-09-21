@@ -6,14 +6,15 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:24:04 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/24 19:40:22 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/09/21 18:04:39 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief locate the first occurence of the string 'needle' in the string 'haystack'
+ * @brief locate the first occurence of the string 'needle' 
+ * in the string 'haystack'
  * 
  * @param haystack string to look at
  * @param needle string to find

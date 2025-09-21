@@ -6,7 +6,7 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 22:46:46 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/09/15 22:48:16 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/09/21 18:02:18 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	while(lst->next)
+	while (lst->next)
 		lst = lst->next;
 	return (lst);
 }
