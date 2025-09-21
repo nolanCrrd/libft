@@ -13,11 +13,22 @@
 #include "libft.h"
 #include <assert.h>
 #include <ctype.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <limits.h>
 
+static char	mapi(unsigned int i, char c)
+{
+	(void) i;
+	return (ft_toupper(c));
+}
+static void	iteri(unsigned int i, char *s)
+{
+	(void) i;
+	*s = ft_toupper(*s);
+}
 int	main(void)
 {
 	// tests ft_isalpha
@@ -256,6 +267,41 @@ int	main(void)
 	assert(ft_strncmp(ft_itoa(-2147483648), "-2147483648", 12) == 0);
 	assert(ft_strncmp(ft_itoa(2147483647), "2147483647", 12) == 0);
 	assert(ft_strncmp(ft_itoa(-12341234), "-12341234", 12) == 0);
+
+	// tests strmapi
+	ft_strmapi("coucou", mapi);
+	// printf("%s\n", ft_strmapi("coucou", mapi));
+	// printf("%s\n", ft_strmapi("1231jbk.dsa", mapi));
+
+	// tests striteri
+	char	*str = ft_strdup("coucou");
+	ft_striteri(str, iteri);
+	// printf("%s\n", str);
+
+	//=============BONUS===============
+
+	// tests ft_lstnew
+	t_list *lst = ft_lstnew((void *)10);
+	// printf("%i\n", (int)(intptr_t)lst->content);
+	// printf("%p\n", lst->next);
+
+	// tests ft_lstadd_front
+	ft_lstadd_front(&lst, ft_lstnew((void *)25));
+	// printf("%i\n", (int)(intptr_t)lst->content);
+	// printf("%p\n", lst->next);
+	// printf("%i\n", (int)(intptr_t)lst->next->content);
+	// printf("%p\n", lst->next->next);
+	t_list *lst2 = ft_lstnew((void *)55);
+	ft_lstadd_front(&lst2, ft_lstnew((void *)70));
+	ft_lstadd_front(&lst, lst2);
+	// printf("%i\n", (int)(intptr_t)lst->content);
+	// printf("%p\n", lst->next);
+	// printf("%i\n", (int)(intptr_t)lst->next->content);
+	// printf("%p\n", lst->next->next);
+	// printf("%i\n", (int)(intptr_t)lst->next->next->content);
+	// printf("%p\n", lst->next->next->next);
+	// printf("%i\n", (int)(intptr_t)lst->next->next->next->content);
+	// printf("%p\n", lst->next->next->next->next);
 
 	exit(0);
 }
