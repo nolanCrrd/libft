@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstdelone-bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/11 18:28:13 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/09/25 16:59:26 by ncorrear         ###   ########.fr       */
+/*   Created: 2025/09/23 15:36:36 by ncorrear          #+#    #+#             */
+/*   Updated: 2025/09/25 16:48:38 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-/**
- * @brief Create an element of a chained list with the given content
- * 
- * @param content value of the element
- * @return t_list* the created element
- */
-t_list	*ft_lstnew(void *content)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	t_list	*new;
-
-	new = malloc(sizeof(t_list));
-	if (new == NULL)
-		return (new);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	del(lst->content);
+	free(lst);
 }
