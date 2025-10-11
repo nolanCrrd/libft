@@ -6,14 +6,14 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 18:45:28 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/24 19:21:10 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/05 21:35:55 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief Fill a memory space of 'len' value 'c'
+ * @brief Fill a memory space with 'len' value of 'c'
  * 
  * @param b memory space to fill
  * @param c value to use

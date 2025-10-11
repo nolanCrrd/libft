@@ -6,14 +6,14 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:20 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/24 19:10:38 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/05 21:36:59 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief fill the memory space 's' of 'n' 0
+ * @brief fill the memory space 's' with 'n' 0
  * 
  * @param s memory space
  * @param n number of zero
