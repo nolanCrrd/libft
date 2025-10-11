@@ -6,13 +6,12 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:42 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/05 21:45:09 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/11 17:37:12 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// TODO : Revoir le concept d'overlap + comment le gerer
 /**
  * @brief Copy the source into the destination without overlap
  * 

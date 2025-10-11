@@ -6,12 +6,18 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 17:57:13 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/09/21 18:03:10 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/11 17:41:57 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief add new chained list at the end of the given one
+ * 
+ * @param lst chained list to edit
+ * @param new new head of the other chained list
+ */
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*current;

@@ -6,12 +6,21 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 16:53:15 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/09/25 17:07:28 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/11 17:47:21 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief create a new chained from an original one with editing each content
+ * with a fucntion
+ * 
+ * @param lst list to map
+ * @param f editing function
+ * @param del function to free all content of one element
+ * @return t_list* new list
+ */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;

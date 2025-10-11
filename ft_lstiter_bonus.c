@@ -6,12 +6,18 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 16:49:38 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/09/25 17:07:02 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/11 17:44:57 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief apply the given function to each element of the list
+ * 
+ * @param lst list to edit
+ * @param f editing function
+ */
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst)
