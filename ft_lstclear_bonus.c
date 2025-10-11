@@ -6,7 +6,7 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 15:42:26 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/11 17:43:29 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/11 21:06:22 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
  */
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	while (*lst)
 	{
