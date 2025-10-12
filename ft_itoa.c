@@ -6,7 +6,7 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 02:26:14 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/24 19:41:17 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/12 17:40:14 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,50 +15,44 @@
 
 static void	set_reverse_number(char tmp_buffer[11], int n, int *i)
 {
-	*i = n == 0;
-	if (n == 0)
-		tmp_buffer[0] = '0';
-	if (n == -2147483648)
+	unsigned int	converted_n;
+
+	converted_n = n * ((n < 0) * -2 + 1);
+	*i = 0;
+	if (converted_n == 0)
+		tmp_buffer[(*i)++] = '0';
+	while (converted_n > 0)
 	{
-		tmp_buffer[*i] = '8';
-		n /= 10;
-		*i += 1;
+		tmp_buffer[(*i)++] = converted_n % 10 + '0';
+		converted_n /= 10;
 	}
-	n *= ((n < 0) * -2 + 1);
-	while (n > 0)
-	{
-		tmp_buffer[*i] = n % 10 + '0';
-		n /= 10;
-		*i += 1;
-	}
+	tmp_buffer[*i] = '\n';
 }
 
 /**
- * @brief convert a given int into a string
+ * @brief convert an int into a string
  * 
- * @param n the int to convert
- * @return char* the string of the number (NULL if malloc fail)
+ * @param n value in int to convert
+ * @return char* converted string
  */
 char	*ft_itoa(int n)
 {
 	char	*buffer;
 	char	tmp_buffer[11];
-	int		i;
+	int		real_len;
 	int		j;
-	int		sign;
+	int		is_negative;
 
-	sign = 0;
-	if (n < 0)
-		sign = 1;
-	set_reverse_number(tmp_buffer, n, &i);
-	buffer = malloc(i + 1 + sign);
+	is_negative = n < 0;
+	set_reverse_number(tmp_buffer, n, &real_len);
+	buffer = malloc(real_len + 1 + is_negative);
 	if (buffer == NULL)
 		return (NULL);
 	j = 0;
-	if (sign)
+	if (is_negative)
 		buffer[j++] = '-';
-	while (--i >= 0)
-		buffer[j++] = tmp_buffer[i];
+	while (--real_len >= 0)
+		buffer[j++] = tmp_buffer[real_len];
 	buffer[j] = '\0';
 	return (buffer);
 }

@@ -6,17 +6,17 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:17 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/24 19:07:32 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/12 17:48:57 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief transform a string number into an int
+ * @brief transform a string number into int
  * 
- * @param str the number to convert
- * @return int the converted number
+ * @param str number in string to convert
+ * @return int converted number
  */
 int	ft_atoi(const char *str)
 {

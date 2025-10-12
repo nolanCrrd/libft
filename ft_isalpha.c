@@ -6,16 +6,16 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:26 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/24 19:12:50 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/12 16:59:20 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief check if a char is alpha
+ * @brief check if the given int correspond to an alphabetic char
  * 
- * @param c char to check
+ * @param c int to verify
  * @return int boolean
  */
 int	ft_isalpha(int c)

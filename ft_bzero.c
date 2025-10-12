@@ -6,7 +6,7 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:20 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/05 21:36:59 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/12 17:50:53 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 /**
  * @brief fill the memory space 's' with 'n' 0
  * 
- * @param s memory space
- * @param n number of zero
+ * @param s memory space to fill
+ * @param n number of zero wanted
  */
 void	ft_bzero(void *s, size_t n)
 {
