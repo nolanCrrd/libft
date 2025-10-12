@@ -6,7 +6,7 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 18:45:28 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/05 21:35:55 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/12 21:44:55 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  * @brief Fill a memory space with 'len' value of 'c'
  * 
  * @param b memory space to fill
- * @param c value to use
+ * @param c used value to fill
  * @param len len to fill
  * @return void* pointer of filled memory space
  */

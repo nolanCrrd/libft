@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/07 16:48:21 by correardnol       #+#    #+#             */
-/*   Updated: 2025/10/05 21:38:24 by ncorrear         ###   ########.fr       */
+/*   Created: 2025/10/12 21:43:19 by ncorrear          #+#    #+#             */
+/*   Updated: 2025/10/12 21:43:34 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 /**
  * @brief Copy the content of a memory space into an other
  * 
- * @param dst the memory space where to copy
- * @param src the source to copy
- * @param n the size in bytes of the source
- * @return void* the pointer of the destination
+ * @param dst memory space where to copy
+ * @param src source to copy
+ * @param n size in bytes of the source
+ * @return void* pointer of the destination
  */
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

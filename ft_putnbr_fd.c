@@ -6,14 +6,14 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 18:35:12 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/11 17:27:42 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/12 21:46:36 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief Write a number into a given file descriptor
+ * @brief Write a number into a specific file descriptor
  * 
  * @param nb number to write
  * @param fd file descriptor

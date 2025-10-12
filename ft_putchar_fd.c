@@ -6,7 +6,7 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 18:29:38 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/24 19:21:51 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/12 21:45:42 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <unistd.h>
 
 /**
- * @brief Write 'c' into a given file descriptor
+ * @brief Write a character into a specific file descriptor
  * 
  * @param c char to write
  * @param fd file descriptor

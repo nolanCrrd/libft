@@ -6,14 +6,14 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:42 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/11 17:37:12 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/12 21:44:19 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief Copy the source into the destination without overlap
+ * @brief Copy the source into the destination avoiding overlap
  * 
  * @param dst destination where to copy
  * @param src source to copy

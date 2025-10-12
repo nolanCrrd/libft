@@ -6,19 +6,19 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:35 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/24 19:17:01 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/12 21:40:53 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief check if c is in the memory space s
+ * @brief return the first occurrence of 'c' in 's'
  * 
- * @param s memory space to look at
- * @param c the value to find
- * @param n the size of the memory space to check
- * @return void* the location of the first occurence (NULL if not find)
+ * @param s memory space where search
+ * @param c value to find
+ * @param n size of the memory space to check
+ * @return void* the location of the first occurrence (NULL if not find)
  */
 void	*ft_memchr(const void *s, int c, size_t n)
 {

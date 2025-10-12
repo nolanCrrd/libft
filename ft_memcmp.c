@@ -6,14 +6,14 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:37 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/08/24 19:18:01 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/12 21:42:22 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief Compare 2 memory spaces
+ * @brief Compare 2 memory space, like strcmp
  * 
  * @param s1 memory space 1
  * @param s2 memory space 2

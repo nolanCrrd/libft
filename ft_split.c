@@ -6,7 +6,7 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 02:26:24 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/09/21 18:35:44 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/12 21:46:57 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static char	**fill_word(char const *s, char c, char **strs, size_t	*j)
 }
 
 /**
- * @brief Seperate the given string by the separator 'c' and put
+ * @brief Separate the given string by the separator 'c' and put
  * each splitted string into an array
  * 
  * @param s string to split
