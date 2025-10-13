@@ -6,7 +6,7 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:18:05 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/13 17:55:11 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/13 18:02:28 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,75 @@ int	main(void)
 	ori_src = "test";
 	assert(memcmp(ft_memcpy(ft_dst, ft_src, 0), memcpy(ori_dst, ori_src, 0), 4) == 0);
 	assert(memcmp(ori_dst, ft_dst, 4) == 0);
+	
+	// tests ft_memmove
+
+	// tests ft_strlcpy
+
+	// tests ft_strlcat
+
+	// tests ft_toupper
+
+	// tests ft_tolower
+
+	// tests ft_strchr
+
+	// tests ft_strrchr
+
+	// tests ft_strncmp
+
+	// tests ft_memchr
+
+	// tests ft_memcmp
+
+	// tests ft_strnstr
+
+	// tests ft_atoi
+
+	// tests ft_calloc
+	
+	// tests ft_strdup
+
+	// tests ft_substr
+
+	// tests ft_strjoin
+
+	// tests ft_strtrim
+
+	// tests ft_split
+
+	// tests ft_itoa
+
+	// tests ft_strmapi
+
+	// tests ft_striteri
+
+	// tests ft_putchar_fd
+
+	// tests ft_putstr_fd
+
+	// tests ft_putendl_fd
+
+	// tests ft_putnbr_fd
+
+	// tests ft_lstnew
+
+	// tests ft_lstadd_front
+
+	// tests ft_lstsize
+
+	// tests ft_lstlast
+	
+	// tests ft_lstadd_back
+
+	// tests ft_lstdelone
+
+	// tests ft_lstclear
+
+	// tests ft_lstiter
+
+	// tests ft_lstmap
+
 	
 	
 	return (0);
