@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_bonus.h"
 #include <assert.h>
 #include <ctype.h>
 #include <stdint.h>
