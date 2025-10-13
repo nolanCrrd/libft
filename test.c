@@ -1,24 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 21:24:10 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/13 13:20:34 by ncorrear         ###   ########.fr       */
+/*   Created: 2025/10/13 13:18:05 by ncorrear          #+#    #+#             */
+/*   Updated: 2025/10/13 13:18:06 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-/**
- * @brief Return the upper char of the given char
- * 
- * @param c char to upper
- * @return int converted char
- */
-int	ft_toupper(int c)
-{
-	return (c - ((c >= 'a' && c <= 'z') * 32));
-}
