@@ -6,11 +6,11 @@
 /*   By: ncorrear <nolan@student.42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 16:53:15 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/11 17:47:21 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/13 13:10:15 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_bonus.h"
 
 /**
  * @brief create a new chained from an original one with editing each content
