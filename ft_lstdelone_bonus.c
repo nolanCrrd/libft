@@ -6,11 +6,11 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 15:36:36 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/14 12:58:23 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/14 17:02:10 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 #include <stdlib.h>
 
 /**

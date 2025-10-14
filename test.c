@@ -6,12 +6,12 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:18:05 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/14 16:39:18 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/14 17:34:51 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "libft_bonus.h"
+#include "libft.h"
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
@@ -332,6 +332,7 @@ int	main(void)
 	ft_lstadd_front(&head, ft_lstnew(&cont));
 	assert(*(int *)(head->content) == 11);
 	assert(head->next == NULL);
+	ft_lstnew((void*)42);
 
 	// tests ft_lstadd_front
 	cont = 10;

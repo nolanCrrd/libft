@@ -6,11 +6,11 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 16:53:15 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/13 13:19:39 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/14 17:48:11 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 /**
  * @brief create a new chained from an original one with editing each content
@@ -24,20 +24,24 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;
-	t_list	*current_new;
+	t_list	*current;
 
 	new_lst = NULL;
-	current_new = new_lst;
-	while (lst)
+	if (lst)
 	{
-		current_new = ft_lstnew(f(lst->content));
-		if (current_new == NULL)
+		new_lst = ft_lstnew(f(lst->content));
+		current = new_lst;
+		while (lst->next)
 		{
-			ft_lstclear(&new_lst, del);
-			return (NULL);
+			current->next = ft_lstnew(f(lst->next->content));
+			if (current->next == NULL)
+			{
+				ft_lstclear(&new_lst, del);
+				return (NULL);
+			}
+			current = current->next;
+			lst = lst->next;
 		}
-		current_new = current_new->next;
-		lst = lst->next;
 	}
 	return (new_lst);
 }
