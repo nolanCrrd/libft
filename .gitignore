@@ -1,2 +1,7 @@
 a.out*
 .vscode
+*.o
+*.pch
+*.a
+libft_bonus.h.pch
+libft.h.pch

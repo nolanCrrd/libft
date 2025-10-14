@@ -6,7 +6,7 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:35 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/14 14:22:53 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/14 15:25:09 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	size_t			i;
 	unsigned char	car;
 
+	if (n == 0)
+		return (NULL);
 	i = 0;
 	s_ptr = (unsigned char *) s;
 	car = (unsigned char) c;

@@ -6,7 +6,7 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:18:05 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/14 14:21:24 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/14 16:39:18 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,6 +157,9 @@ int	main(void)
 	// assert(ft_strncmp(ori_src, ft_src, 20) == 0);
 
 	// tests ft_strlcpy
+	char src[] = "coucou";
+	char dest[10]; memset(dest, 'A', 10);
+	ft_strlcpy(dest, src, 1);
 
 	// tests ft_strlcat
 
@@ -244,6 +247,9 @@ int	main(void)
 	// tests ft_calloc
 	assert(ft_memcmp(ft_calloc(10, 10), calloc(10, 10), 100) == 0);
 	assert(ft_memcmp(ft_calloc(1, 1), calloc(1,1), 1) == 0);
+	ft_calloc(INT_MIN, INT_MIN);
+	ft_calloc(0, -5);
+	ft_calloc(-5, 0);
 	
 	// tests ft_strdup
 	assert(ft_strncmp(ft_strdup("test"), strdup("test"), 5) == 0);
@@ -276,6 +282,7 @@ int	main(void)
 	assert(ft_strncmp("fdsfdss", strs[3], 10) == 0);
 	assert(ft_strncmp("fdsfds", strs[4], 10) == 0);
 	assert(strs[5] == NULL);
+	ft_split("  tripouille  42  ", ' ');
 
 	// tests ft_itoa
 	assert(ft_strncmp("0", ft_itoa(0), 10) == 0);

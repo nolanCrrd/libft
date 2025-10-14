@@ -6,7 +6,7 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:57 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/13 13:20:17 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/14 15:31:52 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 
+	if (dstsize == 0)
+		return (ft_strlen(src));
 	i = 0;
 	while (i < dstsize - 1 && src[i] != '\0')
 	{

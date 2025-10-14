@@ -6,7 +6,7 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:52 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/13 13:20:16 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/14 15:48:45 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /**
  * @brief put the 'src' at the end of 'dst' in the 'dstsize' limit
  * 
- * @param dst string to recieve a suffix
+ * @param dst string to receive a suffix
  * @param src suffix
  * @param dstsize allocated size of dst
  * @return size_t size that dst should have after the concatenation
@@ -29,7 +29,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	if (dst_len >= dstsize)
 		return (dstsize + ft_strlen(src));
 	i = dst_len;
-	while (i < dstsize - 1 && *src != '\0')
+	while (i < dstsize - 1 && src[i - dst_len])
 	{
 		dst[i] = src[i - dst_len];
 		i++;

@@ -6,7 +6,7 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 18:55:11 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/13 13:20:30 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/14 16:45:14 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,27 +25,28 @@
  */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char		*substr;
-	size_t		reel_len;
-	char		is_possible;
+	unsigned int	i;
+	unsigned int	j;
+	char			*new;
+	size_t			size;
 
-	if (s == NULL)
-		return (NULL);
-	reel_len = 0;
-	while (s[reel_len] && reel_len < start)
-		reel_len++;
-	is_possible = (reel_len == start);
-	while (is_possible && s[reel_len] != '\0' && reel_len - start < len)
-		reel_len++;
-	substr = malloc(sizeof(char) * (is_possible * reel_len + 1));
-	if (substr == NULL)
-		return (NULL);
-	reel_len = 0;
-	while (is_possible && s[start + reel_len] != '\0' && reel_len < len)
+	i = 0;
+	new = NULL;
+	while (s[i] && i < start)
+		i++;
+	size = ft_strlen(&s[i]);
+	if (size < len)
+		new = malloc(size + 1);
+	else
+	 	new = malloc(len + 1);
+	if (len == 0 || new == NULL)
+		return (new);
+	j= 0;
+	if (s[i] != '\0')
 	{
-		substr[reel_len] = s[start + reel_len];
-		reel_len++;
+		while (s[i] && j < len)
+			new[j++] = s[i++];
 	}
-	substr[reel_len] = '\0';
-	return (substr);
+	new[j] = '\0';
+	return (new);
 }

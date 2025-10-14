@@ -6,7 +6,7 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:22 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/13 13:19:15 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/14 16:14:30 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,25 +23,17 @@
  */
 void	*ft_calloc(size_t count, size_t size)
 {
-	size_t			i;
-	size_t			j;
 	unsigned char	*ptr;
 
-	i = 0;
 	ptr = NULL;
-	if (size < SIZE_MAX / count)
+	if (size <= SIZE_MAX / count || count <= size / SIZE_MAX)
 		ptr = malloc(size * count);
 	if (ptr == NULL)
 	{
 		errno = ENOMEM;
-		return (NULL);
+		free(ptr);
+		return (ptr);
 	}
-	while (i < count)
-	{
-		j = 0;
-		while (j < size)
-			ptr[size * i + j++] = 0;
-		i++;
-	}
+	ft_bzero(ptr, size * count);
 	return ((void *) ptr);
 }
