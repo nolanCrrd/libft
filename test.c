@@ -6,7 +6,7 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:18:05 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/14 14:05:51 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/14 14:17:06 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,7 +146,6 @@ int	main(void)
 	free(ori_dst);
 	free(ft_dst);
 	
-	// TODO
 	// tests ft_memmove
 	ori_src = ft_strdup("Hello, World!");
 	ori_dst = &ori_src[5];
