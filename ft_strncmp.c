@@ -6,14 +6,14 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:24:01 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/13 13:20:22 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/14 09:52:06 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief Compare 'n' char of 2 differents strings
+ * @brief Compare 'n' char of 2 different strings
  * 
  * @param s1 string 1
  * @param s2 string 2
