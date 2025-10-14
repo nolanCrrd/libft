@@ -5,3 +5,4 @@ a.out*
 *.a
 libft_bonus.h.pch
 libft.h.pch
+tests

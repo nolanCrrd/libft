@@ -6,7 +6,7 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 18:34:03 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/14 17:02:10 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/14 19:45:55 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
  */
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	new->next = *lst;
-	*lst = new;
+	if (new)
+	{
+		new->next = *lst;
+		*lst = new;
+	}
 }

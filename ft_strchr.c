@@ -6,7 +6,7 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:48 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/14 15:28:07 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/14 19:52:31 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@
  */
 char	*ft_strchr(const char *s, int c)
 {
-	char conv_c = (char) c;
+	char	conv_c;
 
+	conv_c = (char) c;
 	while (*s != '\0' && *s != conv_c)
 		s++;
 	if (*s == conv_c)
