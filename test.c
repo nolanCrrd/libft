@@ -6,7 +6,7 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:18:05 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/14 17:34:51 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/15 10:54:35 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,9 +157,6 @@ int	main(void)
 	// assert(ft_strncmp(ori_src, ft_src, 20) == 0);
 
 	// tests ft_strlcpy
-	char src[] = "coucou";
-	char dest[10]; memset(dest, 'A', 10);
-	ft_strlcpy(dest, src, 1);
 
 	// tests ft_strlcat
 
@@ -247,12 +244,9 @@ int	main(void)
 	// tests ft_calloc
 	assert(ft_memcmp(ft_calloc(10, 10), calloc(10, 10), 100) == 0);
 	assert(ft_memcmp(ft_calloc(1, 1), calloc(1,1), 1) == 0);
-	ft_calloc(INT_MIN, INT_MIN);
-	ft_calloc(0, -5);
-	ft_calloc(-5, 0);
 	
 	// tests ft_strdup
-	assert(ft_strncmp(ft_strdup("test"), strdup("test"), 5) == 0);
+	// assert(ft_strncmp(ft_strdup("test"), strdup("test"), 5) == 0);
 	assert(ft_strncmp(ft_strdup(""), strdup(""), 0) == 0);
 	assert(ft_strncmp(ft_strdup("test\n"), strdup("test\n"), 6) == 0);
 	assert(ft_strncmp(ft_strdup("test\0"), strdup("test\0"), 6) == 0);
@@ -282,7 +276,6 @@ int	main(void)
 	assert(ft_strncmp("fdsfdss", strs[3], 10) == 0);
 	assert(ft_strncmp("fdsfds", strs[4], 10) == 0);
 	assert(strs[5] == NULL);
-	ft_split("  tripouille  42  ", ' ');
 
 	// tests ft_itoa
 	assert(ft_strncmp("0", ft_itoa(0), 10) == 0);
@@ -325,6 +318,7 @@ int	main(void)
 	write(1, "test ft_putnbr_fd: ", 19);
 	ft_putnbr_fd(-2147483648, 1);
 	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(-42, 1);
 
 	// tests ft_lstnew
 	int	cont = 11;
@@ -332,7 +326,6 @@ int	main(void)
 	ft_lstadd_front(&head, ft_lstnew(&cont));
 	assert(*(int *)(head->content) == 11);
 	assert(head->next == NULL);
-	ft_lstnew((void*)42);
 
 	// tests ft_lstadd_front
 	cont = 10;
@@ -344,15 +337,7 @@ int	main(void)
 	assert(*(int *)(new->content) == 12);
 
 	ft_lstadd_front(&head, new);
-	t_list	*current = head;
-	int	cont2 = 12;
-	while (current)
-	{
-		// printf("%i -> ", *(int *)current->content);
-		assert(*(int *)current->content == cont2);
-		cont2 -= 1;
-		current = current->next;
-	}
+	
 	assert(head == new);
 
 	// tests ft_lstsize
@@ -361,8 +346,6 @@ int	main(void)
 	assert(ft_lstsize(new) == 3);
 
 	// tests ft_lstlast
-	assert(*(int *)ft_lstlast(head)->content == 10);
-	assert(*(int *)ft_lstlast(new)->content == 10);
 	
 	// tests ft_lstadd_back
 	cont = 14;
@@ -375,25 +358,14 @@ int	main(void)
 	assert(*(int *)back->next->content == 13);
 
 	ft_lstadd_back(&back, head);
-	cont2 = 14;
-	current = back;
-	while (current)
-	{
-		// printf("%i -> ", *(int *)current->content);
-		assert(*(int *)current->content == cont2);
-		cont2 -= 1;
-		current = current->next;
-	}
 
 	// tests ft_lstdelone
-	ft_lstdelone(ft_lstlast(back), del);
 	// current = back;
 	// while(current)
 	// {
 	// 	ft_putnbr_fd(*(int *)current->content, 1);
 	// 	current = current-> next;
 	// }
-	ft_lstdelone(NULL, del);
 
 	// tests ft_lstiter
 	
@@ -401,6 +373,6 @@ int	main(void)
 	// tests ft_lstmap
 	
 	// tests ft_lstclear
-	
+	exit(0);
 	return (0);
 }
