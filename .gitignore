@@ -6,3 +6,5 @@ a.out*
 libft_bonus.h.pch
 libft.h.pch
 tests
+.DS_Store
+en.subject.pdf

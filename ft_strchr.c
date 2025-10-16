@@ -6,14 +6,14 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:48 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/14 19:52:31 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/15 15:07:28 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief Return the first occurence of the char 'c' in the string 's'
+ * @brief Return the first occurrence of the char 'c' in the string 's'
  * 
  * @param s string to look at
  * @param c char to find
