@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ncorrear <ncorrear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:22 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/14 16:14:30 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/16 13:34:55 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 #include <errno.h>
+#include <stdint.h>
 
 /**
  * @brief malloc a memory space of count * size bytes and fill them with zero
@@ -26,7 +27,7 @@ void	*ft_calloc(size_t count, size_t size)
 	unsigned char	*ptr;
 
 	ptr = NULL;
-	if (size <= SIZE_MAX / count || count <= size / SIZE_MAX)
+	if (count != 0 && size <= SIZE_MAX / count)
 		ptr = malloc(size * count);
 	if (ptr == NULL)
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ncorrear <ncorrear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:42 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/14 14:10:42 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/16 13:35:22 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@
  */
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*dst_ptr;
-	char	*src_ptr;
-	size_t	i;
+	unsigned char	*dst_ptr;
+	unsigned char	*src_ptr;
+	size_t			i;
 
-	dst_ptr = (char *) dst;
-	src_ptr = (char *) src;
+	dst_ptr = (unsigned char *) dst;
+	src_ptr = (unsigned char *) src;
 	if (src_ptr < dst_ptr && src_ptr + len > dst_ptr)
 	{
 		i = len ;
