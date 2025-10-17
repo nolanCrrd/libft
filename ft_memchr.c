@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ncorrear <ncorrear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:35 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/14 15:25:09 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/17 10:16:06 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	car = (unsigned char) c;
 	while (i < n && s_ptr[i] != car)
 		i++;
-	if (s_ptr[i] == car)
+	if (i != n && s_ptr[i] == car)
 		return ((void *) &s_ptr[i]);
 	return (NULL);
 }
