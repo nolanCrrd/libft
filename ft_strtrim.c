@@ -6,7 +6,7 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 02:26:34 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/13 13:20:28 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/20 08:39:46 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*trimmed_str;
 	size_t	i;
 
+	if (s1 == NULL || set == NULL)
+		return (NULL);
 	while (*s1 && ft_strchr(set, *s1) != NULL)
 		s1++;
 	len = ft_strlen(s1);

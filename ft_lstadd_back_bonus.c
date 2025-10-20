@@ -6,7 +6,7 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 17:57:13 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/14 17:02:10 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/20 08:42:38 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (*lst == NULL)
 		*lst = new;
-	else
+	else if (new != NULL)
 	{
 		current = *lst;
 		while (current->next)

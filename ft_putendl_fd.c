@@ -6,7 +6,7 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 18:33:26 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/13 13:20:03 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/20 08:41:36 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,13 @@
  */
 void	ft_putendl_fd(char *s, int fd)
 {
-	while (*s)
+	if (s != NULL)
 	{
-		ft_putchar_fd(*s, fd);
-		s++;
+		while (*s)
+		{
+			ft_putchar_fd(*s, fd);
+			s++;
+		}
 	}
 	ft_putchar_fd('\n', fd);
 }

@@ -6,7 +6,7 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 02:26:24 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/15 11:40:58 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/20 08:40:40 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ char	**ft_split(char const *s, char c)
 	char	**strs;
 	size_t	j;
 
+	if (s == NULL)
+		return (NULL);
 	strs = malloc(sizeof(char *) * (count_word(s, c) + 1));
 	j = 0;
 	if (strs == NULL)
