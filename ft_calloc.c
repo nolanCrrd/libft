@@ -6,14 +6,13 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 21:23:22 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/17 08:52:17 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/10/20 08:47:27 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
 #include <stdlib.h>
-#include <errno.h>
 #include <stdint.h>
 
 /**
@@ -35,7 +34,6 @@ void	*ft_calloc(size_t count, size_t size)
 		ptr = malloc(size * count);
 	if (ptr == NULL)
 	{
-		errno = ENOMEM;
 		free(ptr);
 		return (NULL);
 	}
