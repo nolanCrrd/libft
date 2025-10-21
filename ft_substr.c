@@ -31,12 +31,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (s == NULL)
 		return (NULL);
-	new = NULL;
-	size = ft_strlen(&s[start]);
+	size = ft_strlen(s);
+	if (start >= size)
+		return (ft_strdup(""));
+	size -= start;
 	if (size < len)
-		new = malloc(size + 1);
+		new = ft_calloc(1, size + 1);
 	else
-		new = malloc(len + 1);
+		new = ft_calloc(1, len + 1);
 	if (len == 0 || new == NULL)
 		return (new);
 	j = 0;
@@ -46,6 +48,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		while (s[i] && j < len)
 			new[j++] = s[start + i++];
 	}
-	new[j] = '\0';
 	return (new);
 }
