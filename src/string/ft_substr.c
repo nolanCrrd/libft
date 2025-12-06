@@ -6,11 +6,12 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 13:40:05 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/10/21 13:40:13 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/12/06 23:58:57 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 #include <stdlib.h>
 
 /**
@@ -22,7 +23,7 @@
  * @param len number of char after start
  * @return char* allocated string (NULL if malloc fail)
  */
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, size_t start, size_t len)
 {
 	unsigned int	i;
 	unsigned int	j;

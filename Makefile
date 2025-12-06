@@ -1,44 +1,92 @@
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CC=cc
 NAME = libft.a
+SRC_DIR = src/
 
-SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
-       ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c \
-       ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_putchar_fd.c \
-       ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c \
-       ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c \
-       ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c \
-       ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
+SRC_CHAINED = $(SRC_DIR)chained_list/ft_lstadd_back_bonus.c \
+	$(SRC_DIR)chained_list/ft_lstadd_front_bonus.c \
+	$(SRC_DIR)chained_list/ft_lstdelone_bonus.c \
+	$(SRC_DIR)chained_list/ft_lstclear_bonus.c \
+	$(SRC_DIR)chained_list/ft_lstmap_bonus.c \
+	$(SRC_DIR)chained_list/ft_lstiter_bonus.c \
+	$(SRC_DIR)chained_list/ft_lstnew_bonus.c \
+	$(SRC_DIR)chained_list/ft_lstsize_bonus.c \
 
-OBJS = $(SRCS:.c=.o)
+SRC_CHAR = $(SRC_DIR)char/ft_isalnum.c \
+	$(SRC_DIR)char/ft_isalpha.c \
+	$(SRC_DIR)char/ft_isascii.c \
+	$(SRC_DIR)char/ft_isdigit.c \
+	$(SRC_DIR)char/ft_isprint.c \
+	$(SRC_DIR)char/ft_isspace.c \
+	$(SRC_DIR)char/ft_tolower.c \
+	$(SRC_DIR)char/ft_toupper.c \
 
-BONUS_SRCS = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstnew_bonus.c \
-             ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstiter_bonus.c \
-             ft_lstmap_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c
+SRC_MEMORY = $(SRC_DIR)memory/ft_bzero.c \
+	$(SRC_DIR)memory/ft_calloc.c \
+	$(SRC_DIR)memory/ft_memchr.c \
+	$(SRC_DIR)memory/ft_memcmp.c \
+	$(SRC_DIR)memory/ft_memmove.c \
+	$(SRC_DIR)memory/ft_memset.c \
 
-BONUS_OBJS = $(BONUS_SRCS:.c=.o)
+SRC_STRING = $(SRC_DIR)string/ft_atoi.c \
+	$(SRC_DIR)string/ft_itoa.c \
+	$(SRC_DIR)string/ft_split.c \
+	$(SRC_DIR)string/ft_strchr.c \
+	$(SRC_DIR)string/ft_strrchr.c \
+	$(SRC_DIR)string/ft_strdup.c \
+	$(SRC_DIR)string/ft_strndup.c \
+	$(SRC_DIR)string/ft_striteri.c \
+	$(SRC_DIR)string/ft_strmapi.c \
+	$(SRC_DIR)string/ft_strjoin.c \
+	$(SRC_DIR)string/ft_strlcat.c \
+	$(SRC_DIR)string/ft_strlcpy.c \
+	$(SRC_DIR)string/ft_strlen.c \
+	$(SRC_DIR)string/ft_strncmp.c \
+	$(SRC_DIR)string/ft_strnstr.c \
+	$(SRC_DIR)string/ft_strtrim.c \
+	$(SRC_DIR)string/ft_substr.c \
 
-AR = ar
-ARFLAGS = rcs
-RM = rm -f
+SRC_WRITE = $(SRC_DIR)write/ft_putstr_fd.c \
+	$(SRC_DIR)write/ft_putendl_fd.c \
+	$(SRC_DIR)write/ft_putnbr_fd.c \
+	$(SRC_DIR)write/ft_putstr_fd.c \
+
+SRCS = $(SRC_CHAINED) \
+	$(SRC_CHAR) \
+	$(SRC_STRING) \
+	$(SRC_WRITE) \
+	$(SRC_MEMORY) \
+
+OBJ_DIR = .build/
+OBJS = $(SRCS:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)
+
+CFLAGS = -Wall -Werror -Wextra -g \
+		-I include \
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
+$(NAME): $(OBJS) $(LIBFT)
+	@echo ""
+	@echo "================================"
+	@echo "Creating libft..."
+	@echo "================================"
+	@echo ""
+	ar rcs $(NAME) $(OBJS)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
-bonus: $(OBJS) $(BONUS_OBJS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(BONUS_OBJS)
-
-clean:
-	$(RM) $(OBJS) $(BONUS_OBJS)
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+	@mkdir -p $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)write
+	@mkdir -p $(OBJ_DIR)string
+	@mkdir -p $(OBJ_DIR)memory
+	@mkdir -p $(OBJ_DIR)char
+	@mkdir -p $(OBJ_DIR)chained_list
+	@$(CC) $(CFLAGS) $< -c -o $@
 
 fclean: clean
-	$(RM) $(NAME)
+	@rm -f $(NAME)
+
+clean:
+	@rm -rf $(OBJ_DIR)
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all fclean clean re

@@ -10,3 +10,5 @@ tests
 en.subject.pdf
 libftTester
 test.c
+compile_flags.txt
+.build
