@@ -50,11 +50,18 @@ SRC_WRITE = $(SRC_DIR)write/ft_putstr_fd.c \
 	$(SRC_DIR)write/ft_putnbr_fd.c \
 	$(SRC_DIR)write/ft_putstr_fd.c \
 
+SRC_PRINTF = $(SRC_DIR)ft_printf/converters/lltoa.c \
+	$(SRC_DIR)ft_printf/converters/ulltoa.c \
+	$(SRC_DIR)ft_printf/converters/xtoa.c \
+	$(SRC_DIR)ft_printf/utils/printing_utils.c \
+	$(SRC_DIR)ft_printf/ft_printf.c \
+
 SRCS = $(SRC_CHAINED) \
 	$(SRC_CHAR) \
 	$(SRC_STRING) \
 	$(SRC_WRITE) \
 	$(SRC_MEMORY) \
+	$(SRC_PRINTF) \
 
 OBJ_DIR = .build/
 OBJS = $(SRCS:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)
@@ -79,6 +86,9 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)memory
 	@mkdir -p $(OBJ_DIR)char
 	@mkdir -p $(OBJ_DIR)chained_list
+	@mkdir -p $(OBJ_DIR)ft_printf
+	@mkdir -p $(OBJ_DIR)ft_printf/converters
+	@mkdir -p $(OBJ_DIR)ft_printf/utils
 	@$(CC) $(CFLAGS) $< -c -o $@
 
 fclean: clean
