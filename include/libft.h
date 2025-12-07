@@ -6,7 +6,7 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 21:07:35 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/12/07 09:28:15 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/12/07 10:25:16 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,8 @@ t_dict_node	*ft_dict_new_node(char *key, void *content);
 void		ft_dict_clear_node(t_dict_node *node, void (*del)(void *));
 void		ft_dict_clear(t_dict *dict, void (*del)(void *));
 void		ft_dict_unset(t_dict *dict, char *key);
+
+// utils
+void		free_2d(void **tab, void(*del)(void *));
 
 #endif

@@ -65,6 +65,8 @@ SRC_DICT = $(SRC_DIR)dict/ft_dict_clear.c \
 	$(SRC_DIR)dict/ft_dict_set.c \
 	$(SRC_DIR)dict/ft_dict_unset.c \
 
+SRC_UTILS = $(SRC_DIR)utils/free_2d.c \
+
 SRCS = $(SRC_CHAINED) \
 	$(SRC_CHAR) \
 	$(SRC_STRING) \
@@ -72,6 +74,7 @@ SRCS = $(SRC_CHAINED) \
 	$(SRC_MEMORY) \
 	$(SRC_PRINTF) \
 	$(SRC_DICT) \
+	$(SRC_UTILS) \
 
 OBJ_DIR = .build/
 OBJS = $(SRCS:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)
@@ -97,6 +100,7 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)char
 	@mkdir -p $(OBJ_DIR)chained_list
 	@mkdir -p $(OBJ_DIR)dict
+	@mkdir -p $(OBJ_DIR)utils
 	@mkdir -p $(OBJ_DIR)ft_printf
 	@mkdir -p $(OBJ_DIR)ft_printf/converters
 	@mkdir -p $(OBJ_DIR)ft_printf/utils
