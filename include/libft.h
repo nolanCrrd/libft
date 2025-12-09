@@ -13,6 +13,8 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+#define FT_MOD(a, b) (((a) % (b) + (b)) % (b))
+
 # include <stddef.h>
 
 typedef struct s_list
